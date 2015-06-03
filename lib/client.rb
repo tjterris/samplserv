@@ -3,7 +3,7 @@ require 'httparty'
 
 class SamplParty
   include HTTParty
-  base_uri "http://10.0.0.45:4567"
+  base_uri "http://localhost:4567"
 
   def get_options(version=nil)
     options = {}
