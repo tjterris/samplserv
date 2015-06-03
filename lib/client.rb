@@ -5,6 +5,11 @@ class SamplParty
   include HTTParty
   base_uri "http://localhost:4567"
 
+  def cats
+    puts "cats"
+  end
+
+
   def get_options(version=nil)
     options = {}
     if version
