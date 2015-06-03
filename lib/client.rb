@@ -3,12 +3,7 @@ require 'httparty'
 
 class SamplParty
   include HTTParty
-  base_uri "http://localhost:4567"
-
-  def cats
-    puts "cats"
-  end
-
+  base_uri "http://10.0.0.45:4567"
 
   def get_options(version=nil)
     options = {}
@@ -18,13 +13,13 @@ class SamplParty
     options
   end
 
-  def play_sample(sample, version=nil)
-    self.class.post("/#{sample}", options(version))
-  end
-
-  def song(sample, version=nil)
-    toy.play_sample("/harder", 1)
-  end
+  # def play_sample(sample, version=nil)
+  #   self.class.post("/#{sample}", options(version))
+  # end
+  #
+  # def song(sample, version=nil)
+  #   toy.play_sample("/harder", 1)
+  # end
 
   def play_after(verson=nil)
     options = self.get_options(verson)
