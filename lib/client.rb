@@ -13,14 +13,6 @@ class SamplParty
     options
   end
 
-  # def play_sample(sample, version=nil)
-  #   self.class.post("/#{sample}", options(version))
-  # end
-  #
-  # def song(sample, version=nil)
-  #   toy.play_sample("/harder", 1)
-  # end
-
   def play_after(verson=nil)
     options = self.get_options(verson)
     self.class.post("/after", options)
@@ -108,12 +100,8 @@ end
 
 toy = SamplParty.new
 toy.play_harder
-sleep 5
+sleep 3
 toy.play_harder
 sleep 3
 toy.play_harder(2)
 toy.play_beat
-
-
-puts "Cool cool cool ..."
-

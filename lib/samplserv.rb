@@ -2,11 +2,6 @@ require 'sinatra'
 
 require "samplserv/version"
 
-module Samplserv
-  # Your code goes here...
-end
-
-
 helpers do
   def play_sample(sample)
     v = params['v'] ? params['v'].to_i : 1
