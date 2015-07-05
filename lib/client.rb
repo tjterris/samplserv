@@ -5,103 +5,79 @@ class SamplParty
   include HTTParty
   base_uri "http://localhost:4567"
 
-  def get_options(version=nil)
+  def get_options(version)
     options = {}
     if version
-      options = { query: { v: version } }
+      options = {query: {v: version}}
     end
     options
   end
 
-  def play_after(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/after", options)
-  end
-
-  def play_better(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/better", options)
-  end
-
-  def play_doit(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/doit", options)
-  end
-
-  def play_ever(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/ever", options)
-  end
-
-  def play_faster(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/faster", options)
-  end
-
-  def play_harder(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/harder", options)
-  end
-
-  def play_hour(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/hour", options)
-  end
-
-  def play_makeit(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/makeit", options)
-  end
-
-  def play_makesus(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/makesus", options)
-  end
-
-  def play_morethan(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/morethan", options)
-  end
-
-  def play_never(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/never", options)
-  end
-
-  def play_our(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/our", options)
-  end
-
-  def play_over(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/over", options)
-  end
-
-  def play_stronger(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/stronger", options)
-  end
-
-  def play_workis(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/workis", options)
-  end
-
-  def play_workit(verson=nil)
-    options = self.get_options(verson)
-    self.class.post("/workit", options)
+  def play_sample(sample, version=nil)
+    self.class.post("/#{sample}", get_options(version))
   end
 
   def play_beat
     self.class.post("/beat")
   end
+
 end
 
-toy = SamplParty.new
-toy.play_harder
-sleep 3
-toy.play_harder
-sleep 3
-toy.play_harder(2)
-toy.play_beat
+sampl = SamplParty.new
+
+  sampl.play_sample("workit")
+
+  sleep(0.95)
+  sampl.play_sample("makeit")
+  sleep(0.96)
+  sampl.play_sample("doit")
+  sleep(0.96)
+  sampl.play_sample("makesus")
+  sleep(5.3)
+  sampl.play_sample("harder")
+  sleep(0.96)
+  sampl.play_sample("better")
+  sleep(0.96)
+  sampl.play_sample("faster")
+  sleep(0.95)
+  sampl.play_sample("stronger")
+  sleep(4.35)
+
+  sampl.play_sample("morethan")
+
+  sleep(0.96)
+  sampl.play_sample("hour")
+  sleep(0.96)
+  sampl.play_sample("our")
+  sleep(0.96)
+  sampl.play_sample("never")
+  sleep(5.4)
+  sampl.play_sample("ever")
+  sleep(0.96)
+  sampl.play_sample("after")
+  sleep(0.96)
+  sampl.play_sample("workis")
+  sleep(0.96)
+  sampl.play_sample("over")
+
+  sampl.play_beat
+
+  sleep(46.43)
+  intro(sampl)
+  sleep(4.35)
+  sampl.play_sample("workit")
+  sleep(0.96)
+  sampl.play_sample("makeit")
+  sleep(0.96)
+  sampl.play_sample("doit")
+  sleep(0.96)
+  sampl.play_sample("makesus")
+  sleep(5.3)
+  sampl.play_sample("harder")
+  sleep(0.96)
+  sampl.play_sample("better")
+  sleep(0.96)
+  sampl.play_sample("faster")
+  sleep(0.95)
+  sampl.play_sample("stronger")
+  sleep(4.4)
